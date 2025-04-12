@@ -24,9 +24,8 @@ int main() {
 
 #pragma omp parallel for reduction(+:count)
     for (int i = 0; i < size; i++) {
-        x = points.at(i).first;
-        y = points.at(i).second;
-        if (x * x + y * y <= 1.0) {
+        const auto& point = points[i];
+        if (point.first * point.first + point.second * point.second <= 1.0) {
             count++;
         }
     }

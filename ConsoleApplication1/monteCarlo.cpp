@@ -17,13 +17,13 @@ int main() {
     }
 
     int count = 0;
-    int size = points.size();
+    size_t size = points.size();
     file.close();
 
     double start = omp_get_wtime();
 
 #pragma omp parallel for reduction(+:count)
-    for (int i = 0; i < size; i++) {
+    for (size_t i = 0; i < size; i++) {
         const auto& point = points[i];
         if (point.first * point.first + point.second * point.second <= 1.0) {
             count++;

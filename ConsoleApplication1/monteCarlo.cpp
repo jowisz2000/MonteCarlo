@@ -34,7 +34,7 @@ int main() {
 
     double elapsed_time = (end - start) * 1000;
     double pi_estimate = 4.0 * count / size;
-    std::cout << "Otrzymane przybliżenie pi: " << pi_estimate << ", czas wykonywania programu [ms]: " << elapsed_time << "\n";
+    std::cout << "Otrzymane przybliżenie Pi: " << pi_estimate << ", czas wykonywania programu [ms]: " << elapsed_time << std::endl;
 
     return 0;
 }

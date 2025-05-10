@@ -15,10 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleApplication1.cpp">
+    <ClCompile Include="generateData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="monteCarlo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="monteCarloMpi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="monteCarloHybrid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

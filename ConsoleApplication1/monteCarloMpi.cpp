@@ -70,6 +70,7 @@ int main(int argc, char** argv) {
     MPI_Scatterv(all_y.data(), counts.data(), displs.data(), MPI_DOUBLE, local_y.data(), local_size, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
     int local_count = 0;
+
     for (int i = 0; i < local_size; i++) {
         if (local_x[i] * local_x[i] + local_y[i] * local_y[i] <= 1.0) {
             local_count++;

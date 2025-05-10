@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <mpi.h>
+#include <omp.h>
 
 int main(int argc, char** argv) {
     MPI_Init(&argc, &argv);
@@ -30,6 +31,9 @@ int main(int argc, char** argv) {
 
         total_points = points.size();
         std::cout << total_points << " points loaded." << std::endl;
+
+        int threads = 2;
+        omp_set_num_threads(threads);
 
         start_time = MPI_Wtime();
     }
@@ -85,7 +89,7 @@ int main(int argc, char** argv) {
         end_time = MPI_Wtime();
         double elapsed_time = (end_time - start_time) * 1000;
         double pi_estimate = 4.0 * global_count / total_points;
-        std::cout << "Otrzymane przybli¿enie Pi: " << pi_estimate << ", czas wykonywania programu [ms]: " << elapsed_time << "\n";
+        std::cout << "Otrzymane przybliÅ¼enie Pi: " << pi_estimate << ", czas wykonywania programu [ms]: " << elapsed_time << "\n";
     }
 
     MPI_Finalize();

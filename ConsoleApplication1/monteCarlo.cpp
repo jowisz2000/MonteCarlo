@@ -47,5 +47,7 @@ int main() {
     }
 
     file.close();
+
+    std::cout << omp_get_max_threads();
     return 0;
 }

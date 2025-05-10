@@ -5,6 +5,9 @@
 #include <omp.h>
 
 int main(int argc, char** argv) {
+    int threads = 4;
+    omp_set_num_threads(threads);
+
     MPI_Init(&argc, &argv);
 
     int rank, size;
@@ -31,9 +34,6 @@ int main(int argc, char** argv) {
 
         total_points = points.size();
         std::cout << total_points << " points loaded." << std::endl;
-
-        int threads = 2;
-        omp_set_num_threads(threads);
 
         start_time = MPI_Wtime();
     }
